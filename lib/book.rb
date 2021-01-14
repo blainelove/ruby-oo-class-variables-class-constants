@@ -1,6 +1,10 @@
+require 'pry'
+
 class Book
   attr_accessor :author, :page_count, :genre
   attr_reader :title
+
+  GENRES = []
 
   def initialize(title)
     @title = title
@@ -10,4 +14,11 @@ class Book
     puts "Flipping the page...wow, you read fast!"
   end
 
+  def genre=(genre)
+    GENRES << genre
+  end
 end
+
+a = Book.new('Harry Potter')
+a.genre= "Fantasy"
+#binding.pry
